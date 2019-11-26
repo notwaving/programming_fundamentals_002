@@ -23,19 +23,38 @@ const catalogue = [
 ];
 
 function countBooks() {
-  // Your code here
+  return catalogue.length;      
 }
 
+// Look at each book in the catalogue
+// while checking each book I need to see if the book and author match the one that's passed into the function.
 function checkBook(book) {
-  // Your code here
+  for (let i = 0; i < catalogue.length; i++) {
+    if (book === catalogue[i]) {
+      // [i] is each indexed string in the catalogue array
+      return true;
+    }
+    } return false;
 }
 
 function countBooksByFirstLetter(letter) {
-  // Your code here
-}
+// Creates a new array with the first letter of each book
+  const firstLetters = catalogue.map(x => x[0]);
+  let count = 0
+  for (let i = 0; i < firstLetters.length; i++) {
+      if (letter === firstLetters[i]) {
+        count += 1;
+// [i] is each indexed string in the firstLetters array       
+    } 
+  } return count;
+};
 
 function countBooksByKeyword(keyword) {
-  // Your code here
+  let count = 0;
+  for (let i = 0; i < catalogue.length; i++) {
+    if (catalogue[i].search(keyword) === keyword);
+    count ++;
+  } return count;
 }
 
 function getBooksByAuthor(author) {
