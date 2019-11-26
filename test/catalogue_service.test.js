@@ -28,6 +28,6 @@ describe("catalogueService.countBooksByFirstLetter", () => {
 
 describe("catalogueService.countBooksByKeyword", () => {
   test("returns the number of book titles matching a given keyword", () => {
-    expect(catalogueService.countBooksByKeyword("assassin")).toBe(3);
+    expect(catalogueService.countBooksByKeyword("assassin")).toEqual(3);
   });
 });

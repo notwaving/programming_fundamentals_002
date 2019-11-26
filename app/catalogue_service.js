@@ -47,15 +47,33 @@ function countBooksByFirstLetter(letter) {
 // [i] is each indexed string in the firstLetters array       
     } 
   } return count;
-};
-
-function countBooksByKeyword(keyword) {
-  let count = 0;
-  for (let i = 0; i < catalogue.length; i++) {
-    if (catalogue[i].search(keyword) === keyword);
-    count ++;
-  } return count;
 }
+
+/* This function always returns 20, no matter the input 
+I assume it's returning the number of items in the array, as there are 20 books in total*/
+// function countBooksByKeyword(keyword) {
+//   let count = 0;
+//   for (let i = 0; i < catalogue.length; i++) {
+//     if (keyword === catalogue[i].search(keyword));
+//     count ++;
+//   } return count;
+// }
+
+/* Repl.it doesn't even print anything out for this one...  
+npm test returns "Comparing two different types of values. Expected number but received undefined."*/
+function countBooksByKeyword(keyword) {
+  // We'll be returning the total number of books containing the keyword and we'll count them here
+  let count = 0;
+  // Go through each item in the catalogue array
+  catalogue.forEach(function(item){
+    // If our keyword matches any word in that item...
+    if (keyword === item.search(keyword)){
+      //...increment count by 1.
+      count ++;
+    } // When we have iterated through the entire array return count
+    
+  }); return count;
+};
 
 function getBooksByAuthor(author) {
   // Your code here
