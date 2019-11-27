@@ -122,7 +122,12 @@ function countBooksByKeyword(keyword) {
 }
 
 function getBooksByAuthor(author) {
-  // Your code here
+  let booksByAuthor = []
+  catalogue.forEach(function(item) {
+    if (item.toLowerCase().includes(author.toLowerCase())) {
+      booksByAuthor.push(item);
+    }
+  }); return booksByAuthor; 
 }
 
 module.exports = {

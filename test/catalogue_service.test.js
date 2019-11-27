@@ -29,5 +29,27 @@ describe("catalogueService.countBooksByFirstLetter", () => {
 describe("catalogueService.countBooksByKeyword", () => {
   test("returns the number of book titles matching a given keyword", () => {
     expect(catalogueService.countBooksByKeyword("assassin")).toBe(3);
+    expect(catalogueService.countBooksByKeyword("NorMal")).toBe(2);
+    expect(catalogueService.countBooksByKeyword("lol")).toBe(0);
   });
 });
+
+// describe("catalogueService.getBooksByAuthor", () => {
+//   test("returns a new array containing all books by given author")
+//     expect(catalogueService.getBooksByAuthor("Charles Dickens")).toEqual([
+//       "A Tale of Two Cities by Charles Dickens",
+//       "Oliver Twist by Charles Dickens",
+//       "Great Expectations by Charles Dickens"
+//     ]);
+// });
+
+describe("catalogueService.getBooksByAuthor", () => {
+  test("returns the books for the given author", () => {
+    expect(catalogueService.getBooksByAuthor("Charles Dickens")).toEqual([
+      "A Tale of Two Cities by Charles Dickens",
+      "Oliver Twist by Charles Dickens",
+      "Great Expectations by Charles Dickens"
+    ]);
+  });
+});
+  
