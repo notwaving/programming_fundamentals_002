@@ -87,33 +87,39 @@ npm test returns "Comparing two different types of values. Expected number but r
 
  // Use includes() which returns a boolean
   // Includes() is case-sensitive so you need to .toLowercase()
+// function countBooksByKeyword(keyword) {
+//   // Set a counter
+//   let count = 0;
+//   // Convert keyword to lowercase
+//   let keywordLowercase = keyword.toLowerCase();
+//   // Map through the catalogue, creating a new array that is in lowercase
+//   const catLowercase = catalogue.map(x => x.toLowerCase());
+//   // Loop through this new array, and...
+//   catLowercase.forEach(function(item){
+//     //... if the keyword is included in each... includes() is truthy, so it suggests...
+//     let match = catLowercase.includes(keywordLowercase);
+//     // ... that if it's true, increment the count by 1;
+//       count += 1 ;
+//     // once the array has been looped through, return the total count
+//   }); return count;
+// }
+// "SyntaxError: Unexpected token return."
+
+// The solution:
 function countBooksByKeyword(keyword) {
-  // Set a counter
+  // We'll be returning the total number of books containing the keyword and we'll count them here
   let count = 0;
-  // Convert keyword to lowercase
-  let keywordLowercase = keyword.toLowerCase();
-  // Map through the catalogue, creating a new array that is in lowercase
-  const catLowercase = catalogue.map(x => x.toLowerCase());
-  // Loop through this new array, and...
-  catLowercase.forEach(function(item){
-    //... if the keyword is included in each... includes() is truthy, so it suggests...
-    let match = catLowercase.includes(keywordLowercase);
-    // ... that if it's true, increment the count by 1;
-      count += 1 ;
-    // once the array has been looped through, return the total count
-  }); return count;
+  // Go through each item in the catalogue array
+  catalogue.forEach(function(item) {
+    // If our keyword matches any word in that item...
+    if (item.toLowerCase().includes(keyword.toLowerCase())) {
+      // console.log('MATCH');
+      //...increment count by 1.
+      count++;
+    } // When we have iterated through the entire array return count
+  });
+  return count;
 }
-/* "SyntaxError: Unexpected token return."
-
-Everything works till forEach(). I've tried with a for loop too, to no avail.  
-I thought the return statement was OK in terms of scope - it's inside the main function,
-it's outside the count iterator... 
-
-In the failing test it says:  
-"Expected: 3
-Received: 20"
-which I assume to be every item in the catalogue being added to the counter
-*/
 
 function getBooksByAuthor(author) {
   // Your code here
