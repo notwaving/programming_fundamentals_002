@@ -10,7 +10,7 @@ No. There are two values (i.e. title and author) in the strings that comprise ea
 
 Numbers matchers, such as `.toBeGreaterThan(0)` when checking if a book is in stock; `.toBe()` for anything returning a boolean.
 
-
+`.toContain` for the countBooksByKeyword and getBooksByAuthor function tests.
 
 4. What data types are considered "complex" data types?
 
