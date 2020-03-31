@@ -31,14 +31,19 @@ countBooks = () => catalogue.length;
 
 // Look at each book in the catalogue
 // while checking each book I need to see if the book and author match the one that's passed into the function.
-function checkBook(book) {
-  for (let i = 0; i < catalogue.length; i++) {
-    if (book === catalogue[i]) {
-      // [i] is each indexed string in the catalogue array
-      return true;
-    }
-    } return false;
-}
+
+// function checkBook(book) {
+//   for (let i = 0; i < catalogue.length; i++) {
+//     if (book === catalogue[i]) {
+//       // [i] is each indexed string in the catalogue array
+//       return true;
+//     }
+//     } return false;
+// }
+
+// This function is going to be rewritten as an arrow function.
+// It will also implement a find() method, as we only need to see if a book is in in the catalogue, not check all the books
+checkBook = book => catalogue.find(catalogue => catalogue.includes(book)) ? true : false;
 
 function countBooksByFirstLetter(letter) {
 // Creates a new array with the first letter of each book
