@@ -22,9 +22,12 @@ const catalogue = [
   "The Origin of Species by Charles Darwin"
 ];
 
-function countBooks() {
-  return catalogue.length;      
-}
+// function countBooks() {
+//   return catalogue.length;      
+// }
+
+countBooks = () => catalogue.length;
+
 
 // Look at each book in the catalogue
 // while checking each book I need to see if the book and author match the one that's passed into the function.

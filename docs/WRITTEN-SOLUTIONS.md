@@ -22,7 +22,8 @@ String, number, boolean, undefined.
 
 6. In JavaScript it is possible to use `==` ("double equals") or `===` ("triple equals") to compare two values. What is the difference and why do we prefer triple equals?
 
-``` 
+``` javascript
+
 7 == '7' 
 
 // returns true, as the string '7' has been converted to a number before the comparison is done.
