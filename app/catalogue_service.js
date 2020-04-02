@@ -41,18 +41,27 @@ countBooks = () => catalogue.length;
 //     } return false;
 // }
 
-// This function is going to be rewritten as an arrow function.
-// It will also implement a find() method, as we only need to see if a book is in in the catalogue, not check all the books
+// This function will  implement a find() method, as we only need to see if a book is in in the catalogue, not check all the books
 checkBook = book => catalogue.find(catalogue => catalogue.includes(book)) ? true : false;
 
-function countBooksByFirstLetter(letter) {
-// Creates a new array with the first letter of each book
+// function countBooksByFirstLetter(letter) {
+// // Creates a new array with the first letter of each book
+//   const firstLetters = catalogue.map(x => x[0]);
+//   let count = 0
+//   for (let i = 0; i < firstLetters.length; i++) {
+//       if (letter === firstLetters[i]) {
+//         count += 1;
+// // [i] is each indexed string in the firstLetters array       
+//     } 
+//   } return count;
+// }
+
+countBooksByFirstLetter = letter => {
   const firstLetters = catalogue.map(x => x[0]);
   let count = 0
   for (let i = 0; i < firstLetters.length; i++) {
       if (letter === firstLetters[i]) {
-        count += 1;
-// [i] is each indexed string in the firstLetters array       
+        count += 1;     
     } 
   } return count;
 }
