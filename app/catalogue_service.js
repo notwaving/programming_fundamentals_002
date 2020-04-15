@@ -31,9 +31,9 @@ countBooksByFirstLetter = letter => {
   const firstLetters = catalogue.map(x => x[0]);
   let count = 0
   for (let i = 0; i < firstLetters.length; i++) {
-      if (letter === firstLetters[i]) {
-        count += 1;     
-      } 
+    if (letter === firstLetters[i]) {
+      count += 1;
+    }
   } return count;
 }
 
@@ -41,22 +41,22 @@ function countBooksByKeyword(keyword) {
   // We'll be returning the total number of books containing the keyword and we'll count them here
   let count = 0;
   // Go through each item in the catalogue array
-  catalogue.forEach(function(item) {
+  catalogue.forEach(function (item) {
     // If our keyword matches any word in that item...
     if (item.toLowerCase().includes(keyword.toLowerCase())) {
       count++;
-    } 
+    }
   });
   return count;
 }
 
 function getBooksByAuthor(author) {
   let booksByAuthor = []
-  catalogue.forEach(function(item) {
+  catalogue.forEach(function (item) {
     if (item.toLowerCase().includes(author.toLowerCase())) {
       booksByAuthor.push(item);
     }
-  }); return booksByAuthor; 
+  }); return booksByAuthor;
 }
 
 module.exports = {
